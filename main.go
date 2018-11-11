@@ -32,26 +32,12 @@ func main() {
     fs := http.FileServer(http.Dir("./public/static"))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-    http.HandleFunc("/admin/", apiPrimitiveView)
+    http.HandleFunc("/admin/", ui.apiPrimitiveView)
     http.HandleFunc("/api/", apiPrimitive)
 
     log.Println("Listening...")
 
     http.ListenAndServe(":9001", nil)
-}
-
-func apiPrimitiveView(w http.ResponseWriter, r *http.Request) {
-    // обработчик запросов
-
-    body := ""
-
-    page := Page{"Изменение картинки", template.HTML(body)}
-
-    if err := primitive_view_template.ExecuteTemplate(w, "layout", page); err != nil {
-        log.Println(err.Error())
-        //http.Error(w, http.StatusText(500), 500)
-        errorHandler(w, r, 500)
-    }
 }
 
 func apiPrimitive(w http.ResponseWriter, r *http.Request) {
