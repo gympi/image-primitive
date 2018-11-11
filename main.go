@@ -12,7 +12,7 @@ import (
     "time"
     "path/filepath"
 
-    "github.com/gympi/image-primitive/ui/handlers/admin"
+    "github.com/gympi/image-primitive/ui/handlers"
 )
 
 var (
@@ -32,7 +32,7 @@ func main() {
     fs := http.FileServer(http.Dir("./public/static"))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-    http.HandleFunc("/admin/", admin.apiPrimitiveView)
+    http.HandleFunc("/admin/", handlers.apiPrimitiveView)
     http.HandleFunc("/api/", apiPrimitive)
 
     log.Println("Listening...")
