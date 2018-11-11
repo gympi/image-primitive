@@ -20,3 +20,9 @@ docker run --publish 9001:9001 --name primitive_builder --rm primitive_builder
 ```
 docker stop primitive_builder
 ```
+
+# Used third-party projects
+## gowebapp
+```
+https://github.com/grisha/gowebapp
+```
