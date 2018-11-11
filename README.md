@@ -3,7 +3,7 @@
 ## Get or build priject
 ```shell
 export GOPATH=~/go
-$ go get github.com/gympi/image-primitive
+go get github.com/gympi/image-primitive
 ```
 
 ## Build from source and run
