@@ -1,6 +1,22 @@
 # Development
-## Run symple project
+
+## Get or build priject
 ```
+export GOPATH=~/go
+$ go get github.com/gympi/image-primitive
+```
+
+## Build from source and run
+```
+export GOPATH=~/go
+
+cd $GOPATH/src/
+
+git clone https://github.com/gympi/image-primitive.git
+
+cd ./image-primitive
+
+go install ./...
 go run *.go
 ```
 
