@@ -3,14 +3,9 @@ package ui
 import (
     "html/template"
     "net/http"
-    "io"
     "log"
     "path"
     // "fmt"
-    "os"
-    "math/rand"
-    "time"
-    "path/filepath"
 )
 
 type Page struct {
