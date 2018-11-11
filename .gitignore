@@ -1,0 +1,4 @@
+!public/static/shared/.gitkeep
+public/static/shared/*
+!public/static/shared/primitive/.gitkeep
+public/static/shared/primitive/*
