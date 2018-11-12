@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/gympi/image-primitive/ui/http_server"
+	"github.com/gympi/image-primitive/server/http_server"
 )
 
 type Config struct {

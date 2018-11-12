@@ -8,7 +8,7 @@ import (
 )
 
 var (
-    primitive_view_template = template.Must(template.ParseFiles(path.Join("ui", "templates", "layout.html"), path.Join("ui", "templates", "view.html")))
+    primitive_view_template = template.Must(template.ParseFiles(path.Join("server", "templates", "layout.html"), path.Join("server", "templates", "view.html")))
 )
 
 func ApiPrimitiveView(w http.ResponseWriter, r *http.Request) {

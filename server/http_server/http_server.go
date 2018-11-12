@@ -6,7 +6,7 @@ import (
     "bytes"
     "strconv"
 
-    "github.com/gympi/image-primitive/ui/handlers"
+    "github.com/gympi/image-primitive/server/handlers"
 )
 
 type Config struct {
@@ -32,7 +32,7 @@ func Run(cfg Config) error {
 
     log.Printf("Starting, HTTP on: %s\n", listen_spec.String())
 
-    http.ListenAndServe(listen_spec.String(), nil)
+    go http.ListenAndServe(listen_spec.String(), nil)
 
     return nil
 }

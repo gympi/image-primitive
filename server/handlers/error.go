@@ -8,7 +8,7 @@ import (
 )
 
 var (
-    error_template =  template.Must(template.ParseFiles(path.Join("ui", "templates", "layout.html"), path.Join("ui", "templates", "error.html")))
+    error_template =  template.Must(template.ParseFiles(path.Join("server", "templates", "layout.html"), path.Join("server", "templates", "error.html")))
 )
 
 func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
