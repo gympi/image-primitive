@@ -16,8 +16,9 @@ git clone https://github.com/gympi/image-primitive.git
 
 cd ./image-primitive
 
-go install ./...
-go run *.go
+go install -v ./...
+
+$GOPATH/bin/image-primitive
 ```
 
 # Docker container

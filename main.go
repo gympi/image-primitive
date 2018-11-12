@@ -19,8 +19,6 @@ func init() {
 }
 
 func main() {
-
-
   http_server.Run(cfg)
 
   if err := http_server.Run(cfg); err != nil {
