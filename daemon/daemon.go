@@ -2,39 +2,27 @@ package daemon
 
 import (
 	"log"
-	// "net"
 	"os"
 	"os/signal"
 	"syscall"
 
-  // "github.com/gympi/image-primitive/ui/http_server"
+	"github.com/gympi/image-primitive/ui/http_server"
 )
 
 type Config struct {
-	ListenSpec string
-
-  // HttpServer http_server.Config
+	HTTPServer http_server.Config
 }
-//
-// func Run(cfg *Config) error {
-// 	log.Printf("Starting, HTTP on: %s\n", cfg.ListenSpec)
-//
-//   l, err := net.Listen("tcp", cfg.ListenSpec)
-// 	if err != nil {
-// 		log.Printf("Error creating listener: %v\n", err)
-// 		return err
-// 	}
-//
-// 	http_server.Start(cfg.UI, l)
-// l, err := net.Listen("tcp", cfg.ListenSpec)
-// 	if err != nil {
-// 		log.Printf("Error creating listener: %v\n", err)
-// 		return err
-// 	}
-// 	waitForSignal()
-//
-// 	return nil
-// }
+
+func Run(cfg *Config) error {
+
+  if err := http_server.Run(cfg.HTTPServer); err != nil {
+		log.Printf("Error in http_server.Run(): %v", err)
+  }
+
+	waitForSignal()
+
+	return nil
+}
 
 func waitForSignal() {
 	ch := make(chan os.Signal)
