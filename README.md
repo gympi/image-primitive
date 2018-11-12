@@ -29,12 +29,12 @@ docker build -t image-primitive .
 
 ## Run container
 ```shell
-docker run --publish 9001:9001 --name image-primitive --rm image-primitive
+docker run --publish 9001:9001 -d --name image-primitive --rm image-primitive
 ```
 
 ## Stop container
 ```shell
-docker stop pimage-primitive
+docker stop image-primitive
 ```
 
 # Used third-party projects
