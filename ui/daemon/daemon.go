@@ -7,13 +7,13 @@ import (
 	"os/signal"
 	"syscall"
 
-  "github.com/gympi/image-primitive/ui/http_server"
+  // "github.com/gympi/image-primitive/ui/http_server"
 )
 
 type Config struct {
 	ListenSpec string
 
-  HttpServer http_server.Config
+  // HttpServer http_server.Config
 }
 //
 // func Run(cfg *Config) error {

@@ -3,17 +3,21 @@ package http_server
 import (
     "net/http"
     "log"
+    "bytes"
+    "strconv"
 
     "github.com/gympi/image-primitive/ui/handlers"
 )
 
-type Config struct {
-	Assets http.FileSystem
+type HTTPServerConfig struct {
+  Host string
+  Port int
+	AssetsPath string
 }
 
-func Run() {
+func Run(cfg *HTTPServerConfig) error {
     // для отдачи сервером статичных файлов из папки public/static
-    fs := http.FileServer(http.Dir("./public/static"))
+    fs := http.FileServer(http.Dir(cfg.AssetsPath))
     http.Handle("/static/", http.StripPrefix("/static/", fs))
 
     http.HandleFunc("/admin/", handlers.ApiPrimitiveView)
@@ -21,5 +25,12 @@ func Run() {
 
     log.Println("Listening...")
 
-    http.ListenAndServe(":9001", nil)
+    var listen_spec bytes.Buffer
+  	listen_spec.WriteString(cfg.Host)
+  	listen_spec.WriteString(":")
+    listen_spec.WriteString(strconv.Itoa(cfg.Port))
+
+    http.ListenAndServe(listen_spec.String(), nil)
+
+    return nil
 }
