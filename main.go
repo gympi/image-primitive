@@ -7,21 +7,19 @@ import (
   "github.com/gympi/image-primitive/ui/http_server"
 )
 
+var cfg = &http_server.HTTPServerConfig{}
 
-func initFlags() *http_server.HTTPServerConfig {
-	cfg := &http_server.HTTPServerConfig{}
-
+func init() {
 	flag.StringVar(&cfg.Host, "host", "localhost", "Host listen spec")
   flag.IntVar(&cfg.Port, "port", 9001, "Port listen spec")
 
 	flag.StringVar(&cfg.AssetsPath, "assets-path", "public/static", "Path to assets dir")
 
-	flag.Parse()
-	return cfg
+  flag.Parse()
 }
 
 func main() {
-  cfg := initFlags()
+
 
   http_server.Run(cfg)
 
