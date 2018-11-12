@@ -2,7 +2,7 @@ package main
 
 import (
   "flag"
-  // "log"
+  "log"
 
   "github.com/gympi/image-primitive/ui/http_server"
 )
@@ -25,7 +25,7 @@ func main() {
 
   http_server.Run(cfg)
 
-  // if err := http_server.Run(cfg); err != nil {
-	// 	log.Printf("Error in main(): %v", err)
-  // }
+  if err := http_server.Run(cfg); err != nil {
+		log.Printf("Error in main(): %v", err)
+  }
 }
