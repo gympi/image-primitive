@@ -1,9 +1,12 @@
-FROM golang:1.8
+FROM golang:latest
 
 WORKDIR /go/src/app
 
 COPY . .
 
-ENTRYPOINT go run *.go
+RUN go get -d -v ./...
+RUN go install -v ./...
+
+CMD ["app"]
 
 EXPOSE 9001

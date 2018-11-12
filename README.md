@@ -24,17 +24,17 @@ go run *.go
 
 ## Build container
 ```shell
-docker build -t primitive_builder .
+docker build -t image-primitive .
 ```
 
 ## Run container
 ```shell
-docker run --publish 9001:9001 --name primitive_builder --rm primitive_builder
+docker run --publish 9001:9001 --name image-primitive --rm image-primitive
 ```
 
 ## Stop container
 ```shell
-docker stop primitive_builder
+docker stop pimage-primitive
 ```
 
 # Used third-party projects
