@@ -28,7 +28,7 @@ func ApiPrimitive(w http.ResponseWriter, r *http.Request) {
 
     fileUrl := key
 
-    download_filepath := "public/static/shared/" + string_utils.RandString(10) + net.GetFileExt(fileUrl)
+    download_filepath := "public/static/shared/original/" + string_utils.RandString(10) + net.GetFileExt(fileUrl)
     err := net.DownloadFile(download_filepath, fileUrl)
     if err != nil {
         panic(err)
