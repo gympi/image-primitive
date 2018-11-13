@@ -32,7 +32,7 @@ func Run(cfg Config) error {
 
     log.Printf("Starting, HTTP on: %s\n", listen_spec.String())
 
-    go http.ListenAndServe(listen_spec.String(), nil)
+    http.ListenAndServe(listen_spec.String(), nil)
 
     return nil
 }
