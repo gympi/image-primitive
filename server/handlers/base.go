@@ -1,10 +1,10 @@
 package handlers
 
 import (
-    "html/template"
+	"html/template"
 )
 
 type Page struct {
- Title string
- Body  template.HTML
+	Title string
+	Body  template.HTML
 }

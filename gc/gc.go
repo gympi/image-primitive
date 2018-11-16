@@ -1,23 +1,23 @@
 package gc
 
 import (
-    "log"
-    "time"
-  	"math/rand"
+	"log"
+	"math/rand"
+	"time"
 )
 
 type Config struct {
-  Timeout int
+	Timeout int
 }
 
 func Run(cfg Config) error {
-  log.Printf("Starting garbage collector images on")
+	log.Printf("Starting garbage collector images on")
 
-  for true {
-    log.Printf("Run garbage collector...")
-    amt := time.Duration(rand.Intn(cfg.Timeout))
-    time.Sleep(time.Second * amt)
-  }
+	for true {
+		log.Printf("Run garbage collector...")
+		amt := time.Duration(rand.Intn(cfg.Timeout))
+		time.Sleep(time.Second * amt)
+	}
 
-  return nil
+	return nil
 }
